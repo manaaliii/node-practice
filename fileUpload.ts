@@ -69,7 +69,6 @@ const storage = multer.diskStorage({
 
 const fileFilter = (req, file, cb) => {
     if (file.fieldname === 'resume' && !file.originalname.match(/\.(pdf)$/)) {
-        console.log('lmao dead')
         return cb(new Error('File must be a PDF'), false);
     } else if (file.fieldname === 'image' && !file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
 
